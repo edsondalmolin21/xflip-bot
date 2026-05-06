@@ -87,5 +87,5 @@ async function enviarMensagem(numero, texto) {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log("🔥 Rodando na porta " + PORT);
+  console.log(`🔥 Rodando na porta ${PORT}`);
 });

@@ -27,6 +27,9 @@ Responda sempre em JSON:
 }
 `;
 
+app.get("/", (req, res) => {
+  res.send("XFlip bot online 🚀");
+});
 app.post("/webhook", async (req, res) => {
   try {
    console.log(JSON.stringify(req.body, null, 2));

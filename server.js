@@ -29,8 +29,18 @@ Responda sempre em JSON:
 
 app.post("/webhook", async (req, res) => {
   try {
-    const mensagem = req.body.message;
-    const numero = req.body.phone;
+   console.log(JSON.stringify(req.body, null, 2));
+
+const mensagem =
+  req.body.text?.message ||
+  req.body.message ||
+  req.body.data?.message ||
+  "";
+
+const numero =
+  req.body.phone ||
+  req.body.data?.phone ||
+  "";
 
     if (!mensagem) return res.sendStatus(200);
 

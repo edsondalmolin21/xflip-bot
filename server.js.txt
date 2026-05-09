@@ -6,12 +6,12 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("XFlip bot online 🚀");
+  res.send("XFlip bot online ??");
 });
 
 app.post("/webhook", async (req, res) => {
   try {
-    console.log("🔥 Mensagem recebida");
+    console.log("?? Mensagem recebida");
     console.log(JSON.stringify(req.body, null, 2));
 
     const mensagem =
@@ -25,13 +25,13 @@ app.post("/webhook", async (req, res) => {
       req.body.data?.phone ||
       "";
 
-    console.log("📩 Mensagem:", mensagem);
-    console.log("📱 Número:", numero);
+    console.log("?? Mensagem:", mensagem);
+    console.log("?? N�mero:", numero);
 
     return res.sendStatus(200);
 
   } catch (e) {
-    console.log("❌ Erro:");
+    console.log("? Erro:");
     console.log(e);
 
     return res.sendStatus(500);
@@ -41,5 +41,5 @@ app.post("/webhook", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`🔥 Rodando na porta ${PORT}`);
+  console.log(`?? Rodando na porta ${PORT}`);
 });
